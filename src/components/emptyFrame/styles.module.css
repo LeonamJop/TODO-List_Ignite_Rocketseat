@@ -1,0 +1,20 @@
+.empty {
+    width: 46rem;
+    height: 15.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--gray-400);
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--gray-300);
+}

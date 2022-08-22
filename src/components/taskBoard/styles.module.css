@@ -1,0 +1,52 @@
+.taskBoard {
+    width: 46rem;
+    height: 28.188rem;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.countTasks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.created {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    color: var(--blue-300);
+}
+
+.created p {
+    width: 1.5rem;
+    height: 1.188rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-200);
+    background: var(--gray-400);
+    border-radius: 0.5rem;
+}
+
+.done {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
+    color: var(--purple-300);
+}
+
+.done p{
+    min-width: 1.5rem;
+    min-height: 1.188rem;
+    padding: 0.125rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--gray-200);
+    background: var(--gray-400);
+    border-radius: 0.5rem;
+}

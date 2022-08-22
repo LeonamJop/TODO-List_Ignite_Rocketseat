@@ -1,10 +1,11 @@
 import styles from "./styles.module.css";
 import { PlusCircle } from "phosphor-react"
+import { TaskBoard } from "../taskBoard";
 
 
-export function Task() {
+export function NewTask() {
     return (
-        <>
+        <div>
             <div className={styles.task}>
                 <input
                     type="text"
@@ -15,9 +16,7 @@ export function Task() {
                     <PlusCircle size={20}/>
                 </button>
             </div>
-            <div >
-                
-            </div>
-        </>
+            <TaskBoard/>
+        </div>
     )
 }
