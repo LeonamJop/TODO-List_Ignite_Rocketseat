@@ -1,0 +1,41 @@
+.task {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: -1.688rem;
+    background: none;
+}
+
+.task input {
+    width: 39.875rem;
+    height: 3.375rem;
+    background: var(--gray-500);
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--white);
+}
+
+.task button {
+    width: 5.625rem;
+    height: 3.375rem;
+    background: var(--blue-500);
+    color: var(--gray-100);
+    font-size: 0.875rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.task button:hover {
+    background: var(--blue-300);
+}
+
+.task button svg {
+    background: none;
+}
