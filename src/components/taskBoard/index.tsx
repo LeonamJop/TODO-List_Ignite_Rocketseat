@@ -1,7 +1,23 @@
-import { EmptyFrame } from "../emptyFrame";
 import styles from "./styles.module.css";
-import { uuid } from 'uuidv4'
-import { FilledFrame } from "../filledFrame";
+import { EmptyFrame } from "../emptyFrame";
+import { Card } from "../card";
+import { v4 as uuid } from 'uuid';
+
+
+const cards = [{
+    id: uuid(),
+    content: "Teste novo card",
+    done: true
+}, {
+    id: uuid(),
+    content: "Teste novo card",
+    done: false
+}, {
+    id: uuid(),
+    content: "Teste novo card",
+    done: false
+},
+]
 
 export function TaskBoard() {
     return (
@@ -9,15 +25,29 @@ export function TaskBoard() {
             <div className={styles.countTasks}>
                 <div className={styles.created}>
                     <strong>Tarefas criadas</strong>
-                    <p>1</p>
+                    <p>{cards.length}</p>
                 </div>
                 <div className={styles.done}>
-                    <strong>Tarefas criadas</strong>
-                    <p>1</p>
+                    <strong>Concluídas</strong>
+                    <p>0</p>
                 </div>
             </div>
-            <FilledFrame/>
-            {/* <EmptyFrame/> */}
+            {cards.length ?
+                <div className={styles.filledFrame}>
+                    {cards.map(card => {
+                        return (
+                            <Card
+                                key={card.id}
+                                content={card.content}
+                                done={card.done}
+                            />
+                        )
+                    })}
+                </div>
+                :
+                <EmptyFrame />
+            }
+
         </div>
     )
 }
