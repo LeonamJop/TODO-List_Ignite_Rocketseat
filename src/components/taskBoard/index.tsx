@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import { EmptyFrame } from "../emptyFrame";
 import { Card } from "../card";
 import { v4 as uuid } from 'uuid';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NewTask } from "../newTask";
 
 
@@ -16,7 +16,7 @@ export function TaskBoard() {
     const [taskList, setTaskList] = useState<CardProps[]>([]);
     const [tasksDone, setTasksDone] = useState(0);
 
-    function creatTask(onCreatTask: string){
+    function creatTask(onCreatTask: string) {
         const newTaskList = [...taskList];
         newTaskList.push({
             id: uuid(),
@@ -41,18 +41,25 @@ export function TaskBoard() {
             setTaskList(taskList);
         })
 
+        recalculateTaskDone();
+    }
+
+    const recalculateTaskDone = () => {
         const countTasksDone = taskList.filter(task => {
             return (
                 task.done === true
             )
         })
-
         setTasksDone(countTasksDone.length);
     }
 
+    useEffect(() => {
+        recalculateTaskDone();
+    }, [taskList]);
+
     return (
         <div className={styles.todo}>
-            <NewTask 
+            <NewTask
                 onCreatTask={creatTask}
             />
             <div className={styles.taskBoard}>
