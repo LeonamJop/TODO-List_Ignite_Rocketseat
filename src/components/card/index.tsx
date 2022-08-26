@@ -44,7 +44,7 @@ export function Card({id, content, done, onDelete, onDone}: CardProps) {
             <button
                 onClick={handleDeleteCard}
             >
-                <Trash size={24} />
+                <Trash size={20} />
             </button>
         </div>
     )

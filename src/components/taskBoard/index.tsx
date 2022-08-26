@@ -70,7 +70,7 @@ export function TaskBoard() {
                     </div>
                     <div className={styles.done}>
                         <strong>Concluídas</strong>
-                        <p>{taskList.length ? `${tasksDone} de ${taskList.length}` : '0'}</p>
+                        <p>{taskList.length ? `${tasksDone} de ${taskList.length}` : `${taskList.length}`}</p>
                     </div>
                 </div>
                 {taskList.length ?

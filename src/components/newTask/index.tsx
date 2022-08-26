@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
 import { PlusCircle } from "phosphor-react"
-import { ChangeEvent, InvalidEvent, useState } from "react";
+import { useState } from "react";
 
 interface TaskProps {
     onCreatTask: (task: string) => void
@@ -16,10 +16,6 @@ export function NewTask({onCreatTask}: TaskProps) {
         }
     }
 
-    function handleNewTaskInvalid(event: InvalidEvent<HTMLInputElement>) {
-        event.target.setCustomValidity('Esse campo é obrigatório')
-    }
-
     return (
         <div>
             <div className={styles.task}>
@@ -27,7 +23,7 @@ export function NewTask({onCreatTask}: TaskProps) {
                     type="text"
                     value={newTask}
                     placeholder="Adicione uma nova tarefa"
-                    onChange={e =>  setNewTask(e.target.value)}
+                    onChange={e => setNewTask(e.target.value)}
                 />
                 <button
                     onClick={handleCreatNewTask}
