@@ -1,3 +1,10 @@
+.todo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .taskBoard {
     width: 46rem;
     height: 28.188rem;
